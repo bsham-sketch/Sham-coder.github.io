@@ -1,44 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sham B | Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
 body{
-font-family: Arial, sans-serif;
-margin:40px;
-background:#f5f6fa;
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#f4f6f9;
+    color:#2c3e50;
 }
 
+/* NAVBAR */
+nav{
+    background:#2c3e50;
+    color:white;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(to right,#2980b9,#6dd5fa);
+    color:white;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+/* CONTAINER */
 .container{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
 }
 
-h1{
-color:#2c3e50;
+/* SECTION */
+.section{
+    margin-top:40px;
 }
 
 h2{
-color:#34495e;
-border-bottom:2px solid #eee;
-padding-bottom:5px;
+    border-bottom:3px solid #eee;
+    padding-bottom:8px;
 }
 
-.section{
-margin-top:25px;
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
-ul{
-line-height:1.8;
+.skill{
+    background:#2980b9;
+    color:white;
+    padding:8px 15px;
+    border-radius:20px;
+    font-size:14px;
 }
 
-a{
-color:#2980b9;
-text-decoration:none;
+/* PROJECTS */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    margin-top:40px;
+}
+
+.contact a{
+    display:inline-block;
+    margin:10px;
+    padding:10px 20px;
+    background:#2c3e50;
+    color:white;
+    border-radius:5px;
+    text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#2c3e50;
+    color:white;
+    margin-top:40px;
 }
 
 </style>
@@ -46,76 +127,82 @@ text-decoration:none;
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+    <h3>Sham B</h3>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Hi, I'm Sham 👋</h1>
+    <p>Python Full Stack Developer | React.js | Building Scalable Web Apps</p>
+</div>
+
 <div class="container">
 
-<h1>Sham B</h1>
-<p><b>Python Full Stack Developer</b></p>
-
+<!-- ABOUT -->
+<div class="section" id="about">
+<h2>About Me</h2>
 <p>
-📞 +91 9113894835 <br>
-📧 bsham2296@gmail.com <br>
-💻 <a href="https://github.com/Sham-coder">GitHub</a> <br>
-🔗 <a href="https://www.linkedin.com/in/sham-b-4b2558373/">LinkedIn</a>
-</p>
-
-<div class="section">
-<h2>Summary</h2>
-<p>
-Highly motivated Python Full Stack Developer with experience building scalable web applications 
-using React.js and Tailwind CSS. Skilled in frontend development, REST API integration, 
-and responsive UI design.
+Motivated Full Stack Developer skilled in React.js and modern UI development. 
+I build responsive, scalable applications with clean design and efficient APIs.
 </p>
 </div>
 
-<div class="section">
-<h2>Technical Skills</h2>
-<ul>
-<li>Python</li>
-<li>HTML5, CSS3, JavaScript</li>
-<li>React.js</li>
-<li>Tailwind CSS</li>
-<li>SQL</li>
-<li>GitHub</li>
-<li>VS Code</li>
-</ul>
+<!-- SKILLS -->
+<div class="section" id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<span class="skill">Python</span>
+<span class="skill">JavaScript</span>
+<span class="skill">React.js</span>
+<span class="skill">Tailwind CSS</span>
+<span class="skill">HTML</span>
+<span class="skill">CSS</span>
+<span class="skill">SQL</span>
+<span class="skill">Git</span>
+</div>
 </div>
 
-<div class="section">
+<!-- PROJECTS -->
+<div class="section" id="projects">
 <h2>Projects</h2>
 
+<div class="projects">
+
+<div class="card">
 <h3>Online Fact Hub</h3>
-<ul>
-<li>Built full-stack platform using React.js and Tailwind CSS</li>
-<li>Implemented search, filtering and category navigation</li>
-<li>Used Axios for REST API integration</li>
-<li>Responsive mobile-first UI design</li>
-</ul>
-
-<h3>Online E-Commerce Web Application</h3>
-<ul>
-<li>Developed React.js SPA</li>
-<li>Product listing and cart functionality</li>
-<li>Checkout validation and order summary</li>
-<li>Responsive layout using Tailwind CSS</li>
-</ul>
-
+<p>Full-stack platform with API integration, search & filtering.</p>
 </div>
 
-<div class="section">
-<h2>Education</h2>
-<ul>
-<li>BCA – Sree Venkateshwara Degree College (2025) – 94%</li>
-<li>PUC – Sree Venkateshwara PU College (2022)</li>
-<li>SSLC – Christ The King School (2020)</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Certification</h2>
-<p>Python Full Stack Developer – PySpiders</p>
+<div class="card">
+<h3>E-Commerce App</h3>
+<p>React SPA with cart, checkout, and responsive UI.</p>
 </div>
 
 </div>
+</div>
+
+<!-- CONTACT -->
+<div class="section contact" id="contact">
+<h2>Contact Me</h2>
+<a href="mailto:bsham2296@gmail.com">Email</a>
+<a href="https://github.com/bsham-sketch">GitHub</a>
+<a href="https://linkedin.com">LinkedIn</a>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<p>© 2026 Sham B | Portfolio</p>
+</footer>
 
 </body>
 </html>
