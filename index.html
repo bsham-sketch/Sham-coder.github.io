@@ -2,206 +2,258 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sham B | Portfolio</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sham B | Web Developer</title>
+<meta name="description" content="Sham B is a web developer in Bengaluru working with React.js, HTML, CSS, JavaScript, on-page SEO and Google Search Console.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-
-body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f4f6f9;
-    color:#2c3e50;
+:root{
+  --bg:#f2f5f4; --panel:#ffffff; --ink:#15202b; --muted:#546270;
+  --line:#d5dde0; --accent:#0b5fff; --accent-ink:#ffffff; --mark:#ffe58a;
+  --head:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,sans-serif;
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 
-/* NAVBAR */
-nav{
-    background:#2c3e50;
-    color:white;
-    padding:15px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+header.top{border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px;gap:16px;flex-wrap:wrap}
+.logo{font-family:var(--head);font-weight:700;font-size:20px;text-decoration:none}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:72px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+h1{font-family:var(--head);font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.08;margin:0 0 20px;letter-spacing:-.02em}
+.lede{color:var(--muted);max-width:52ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.primary:hover{background:#0847c4;border-color:#0847c4}
+
+/* search-result card: the one memorable element */
+.serp{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 1px 0 var(--line)}
+.serp .bar{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--muted);font-size:15px;margin-bottom:20px}
+.serp .url{font-size:14px;color:var(--muted);margin:0}
+.serp .title{font-family:var(--head);font-size:21px;font-weight:500;color:var(--accent);margin:2px 0 6px;line-height:1.3}
+.serp p.desc{margin:0 0 14px;font-size:15px;color:#33414e}
+.serp mark{background:var(--mark);padding:0 2px}
+.serp .links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.serp .links a{color:var(--accent);text-decoration:none}
+.serp .links a:hover{text-decoration:underline}
+
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font-family:var(--head);font-size:30px;line-height:1.2;margin:0 0 28px;letter-spacing:-.01em}
+h3{font-family:var(--head);font-size:21px;margin:0 0 4px;line-height:1.3}
+.meta{color:var(--muted);font-size:15px;margin:0 0 12px}
+
+.job{display:grid;grid-template-columns:200px 1fr;gap:12px 40px;margin-bottom:40px}
+.job .when{color:var(--muted);font-size:15px;padding-top:4px}
+ul{margin:0;padding-left:20px}
+li{margin-bottom:6px;max-width:75ch}
+
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+.skillgrid h3{font-size:17px;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 11px;font-size:14.5px}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.project{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px}
+.project .tags{margin:16px 0}
+.project a.more{font-weight:600;color:var(--accent);text-decoration:none;margin-right:18px}
+.project a.more:hover{text-decoration:underline}
+
+.edu{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.edu .score{font-family:var(--head);font-size:26px;font-weight:700;margin:0}
+
+.contact p{max-width:55ch;color:var(--muted);margin:0 0 24px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14.5px}
+
+@media (max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .job{grid-template-columns:1fr;gap:4px}
+  nav a{margin:0 18px 0 0}
 }
-
-nav a{
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-}
-
-/* HERO */
-.hero{
-    text-align:center;
-    padding:60px 20px;
-    background:linear-gradient(to right,#2980b9,#6dd5fa);
-    color:white;
-}
-
-.hero h1{
-    font-size:40px;
-}
-
-.hero p{
-    font-size:18px;
-}
-
-/* CONTAINER */
-.container{
-    max-width:1100px;
-    margin:auto;
-    padding:20px;
-}
-
-/* SECTION */
-.section{
-    margin-top:40px;
-}
-
-h2{
-    border-bottom:3px solid #eee;
-    padding-bottom:8px;
-}
-
-/* SKILLS */
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.skill{
-    background:#2980b9;
-    color:white;
-    padding:8px 15px;
-    border-radius:20px;
-    font-size:14px;
-}
-
-/* PROJECTS */
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-/* CONTACT */
-.contact{
-    text-align:center;
-    margin-top:40px;
-}
-
-.contact a{
-    display:inline-block;
-    margin:10px;
-    padding:10px 20px;
-    background:#2c3e50;
-    color:white;
-    border-radius:5px;
-    text-decoration:none;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:20px;
-    background:#2c3e50;
-    color:white;
-    margin-top:40px;
-}
-
 </style>
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <h3>Sham B</h3>
-    <div>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top">Sham B</a>
+    <nav aria-label="Main">
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>I build responsive websites and keep them findable in search.</h1>
+        <p class="lede">I’m a BCA graduate and web developer intern in Bengaluru. I work with React.js, JavaScript, HTML and CSS, and I handle on-page SEO, content updates and testing on live websites.</p>
+        <div class="btns">
+          <a class="btn primary" href="mailto:bsham2296@gmail.com">Email me</a>
+          <a class="btn" href="Sham_Last__Updated_Resume.pdf" download>Download resume</a>
+          <a class="btn" href="https://github.com/bsham-sketch">GitHub</a>
+        </div>
+      </div>
+
+      <div class="serp" aria-label="Search result style summary">
+        <div class="bar">Sham B web developer Bengaluru</div>
+        <p class="url">github.com/bsham-sketch</p>
+        <p class="title">Sham B – Web Developer (React.js, HTML, CSS, SEO)</p>
+        <p class="desc">Web Developer Intern at Veave Technologies. Builds responsive pages, runs <mark>on-page SEO</mark> and monitors indexing in <mark>Google Search Console</mark>. BCA, 93.30%.</p>
+        <div class="links">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
-</nav>
+  </div>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Hi, I'm Sham 👋</h1>
-    <p>Python Full Stack Developer | React.js | Building Scalable Web Apps</p>
-</div>
+  <section id="experience">
+    <div class="wrap">
+      <h2>Experience</h2>
 
-<div class="container">
+      <div class="job">
+        <div class="when">Jun 2026 – Present</div>
+        <div>
+          <h3>Web Developer Intern</h3>
+          <p class="meta">Veave Technologies</p>
+          <ul>
+            <li>Build and maintain responsive pages with HTML, CSS and JavaScript that work across devices and browsers.</li>
+            <li>Update website content to match business, SEO and user experience requirements.</li>
+            <li>Apply on-page SEO and track indexing, coverage and search performance in Google Search Console.</li>
+            <li>Test pages and features, report issues, and support day-to-day maintenance and troubleshooting.</li>
+            <li>Keep task updates and documentation in Excel, and coordinate with the development and content teams on Slack, Teams and Outlook.</li>
+            <li>Create website visuals in Canva and support basic digital marketing activities.</li>
+          </ul>
+        </div>
+      </div>
 
-<!-- ABOUT -->
-<div class="section" id="about">
-<h2>About Me</h2>
-<p>
-Motivated Full Stack Developer skilled in React.js and modern UI development. 
-I build responsive, scalable applications with clean design and efficient APIs.
-</p>
-</div>
+      <div class="job">
+        <div class="when">Aug 2025 – Apr 2026</div>
+        <div>
+          <h3>Technical Training, Web Development</h3>
+          <p class="meta">PySpiders</p>
+          <ul>
+            <li>Built web projects with React.js, JavaScript, HTML, CSS, Python, SQL and APIs.</li>
+            <li>Wrote SQL queries for application features and data retrieval.</li>
+            <li>Practised debugging, validation, exception handling and basic testing.</li>
+            <li>Managed project code on GitHub and learned basic deployment and production setup.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- SKILLS -->
-<div class="section" id="skills">
-<h2>Skills</h2>
-<div class="skills">
-<span class="skill">Python</span>
-<span class="skill">JavaScript</span>
-<span class="skill">React.js</span>
-<span class="skill">Tailwind CSS</span>
-<span class="skill">HTML</span>
-<span class="skill">CSS</span>
-<span class="skill">SQL</span>
-<span class="skill">Git</span>
-</div>
-</div>
+  <section id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <div class="skillgrid">
+        <div>
+          <h3>Web</h3>
+          <ul class="tags"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React.js</li><li>Tailwind CSS</li><li>Responsive design</li></ul>
+        </div>
+        <div>
+          <h3>Programming and data</h3>
+          <ul class="tags"><li>Python</li><li>SQL</li><li>REST APIs</li></ul>
+        </div>
+        <div>
+          <h3>SEO and marketing</h3>
+          <ul class="tags"><li>On-page SEO</li><li>Google Search Console</li><li>Search indexing</li><li>Content implementation</li><li>Performance monitoring</li><li>Basic digital marketing</li></ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="tags"><li>GitHub</li><li>VS Code</li><li>Canva</li><li>Excel</li><li>Word</li><li>PowerPoint</li><li>Outlook</li><li>Teams</li><li>Slack</li></ul>
+        </div>
+        <div>
+          <h3>Working style</h3>
+          <ul class="tags"><li>Documentation</li><li>Task tracking</li><li>Basic QA and testing</li><li>Debugging</li><li>Agile basics</li><li>Team collaboration</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- PROJECTS -->
-<div class="section" id="projects">
-<h2>Projects</h2>
+  <section id="projects">
+    <div class="wrap">
+      <h2>Projects</h2>
+      <div class="projects">
 
-<div class="projects">
+        <article class="project">
+          <h3>Online Fact Hub</h3>
+          <p class="meta">Web application</p>
+          <p>A content platform where visitors browse facts by category, search them and filter the results. Content comes from an API and the layout adapts from desktop to mobile.</p>
+          <ul class="tags"><li>React.js</li><li>Tailwind CSS</li><li>API</li><li>Render</li></ul>
+          <!-- Add your live link below, e.g. href="https://your-app.onrender.com" -->
+          <a class="more" href="https://github.com/bsham-sketch">View code</a>
+        </article>
 
-<div class="card">
-<h3>Online Fact Hub</h3>
-<p>Full-stack platform with API integration, search & filtering.</p>
-</div>
+        <article class="project">
+          <h3>E-Commerce Web Application</h3>
+          <p class="meta">Single-page application</p>
+          <p>A shopping app with product listing, filtering, a cart and a checkout flow with form validation and an order summary. State is managed with React Hooks and Props, with product and cart data from an API.</p>
+          <ul class="tags"><li>React.js</li><li>Hooks</li><li>API</li><li>Form validation</li></ul>
+          <a class="more" href="https://github.com/bsham-sketch">View code</a>
+        </article>
 
-<div class="card">
-<h3>E-Commerce App</h3>
-<p>React SPA with cart, checkout, and responsive UI.</p>
-</div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</div>
+  <section id="education">
+    <div class="wrap">
+      <h2>Education</h2>
+      <div class="edu">
+        <div>
+          <p class="score">93.30%</p>
+          <h3>Bachelor of Computer Applications</h3>
+          <p class="meta">Sri Venkateshwara College of Science &amp; Management Studies, Bangalore, 2025</p>
+        </div>
+        <div>
+          <p class="score">82%</p>
+          <h3>Pre-University Course</h3>
+          <p class="meta">Sree Venkateshwara PU College, Bangalore, 2022</p>
+        </div>
+        <div>
+          <p class="score">68%</p>
+          <h3>SSLC</h3>
+          <p class="meta">Christ The King School, Bangalore, 2020</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<div class="section contact" id="contact">
-<h2>Contact Me</h2>
-<a href="mailto:bsham2296@gmail.com">Email</a>
-<a href="https://github.com/bsham-sketch">GitHub</a>
-<a href="https://linkedin.com">LinkedIn</a>
-</div>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <p>I’m looking for full-time roles in web development, IT, technical support, SEO and digital operations. Email is the quickest way to reach me.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:bsham2296@gmail.com">bsham2296@gmail.com</a>
+        <a class="btn" href="tel:+919113894835">+91 91138 94835</a>
+        <a class="btn" href="https://github.com/bsham-sketch">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/sham-b-4b2558373/">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-</div>
-
-<!-- FOOTER -->
 <footer>
-<p>© 2026 Sham B | Portfolio</p>
+  <div class="wrap">© 2026 Sham B. Bengaluru, Karnataka.</div>
 </footer>
 
 </body>
